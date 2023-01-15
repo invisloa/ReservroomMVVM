@@ -10,7 +10,7 @@ namespace Reservroom.ViewModels
 	public class ReservationViewModel : ViewModelBase
 	{
 		private Reservation _reservation;
-		public string RoomID => _reservation.RoomID.ToString();
+		public string RoomID => _reservation.RoomID?.ToString();
 		public string Username => _reservation.Username;
 		public DateTime StartTime => _reservation.StartTime;
 		public DateTime EndTime => _reservation.EndTime;

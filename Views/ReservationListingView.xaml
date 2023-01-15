@@ -24,7 +24,8 @@
 
             <Button Content="Make Reservation" 
                     Margin="10 0 0 0"
-                    Grid.Column="1" />
+                    Grid.Column="1"
+                    Command="{Binding MakeReservationCommand}"/>
         </Grid>
 
         <ListView Grid.Row="1" Margin="0 25 0 0">

@@ -25,8 +25,9 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Name" Grid.Row="0"/>
-            <TextBox Grid.Row="1" Text=""
+            
+            <TextBlock Text="Username" Grid.Row="0"/>
+            <TextBox Grid.Row="1" Text="{Binding Username}"
                      Margin="0 5 0 0"/>
         </Grid>
 
@@ -46,9 +47,9 @@
                 Grid.Row="0"/>
             <TextBox
                 Grid.Row="1"
-                Grid.Column="1"
-                Text=""
-                Margin="5 5 0 0"/>
+                Grid.Column="0"
+                Text="{Binding FloorNumber}"
+                Margin="0 5 0 0"/>
             
             <TextBlock 
                 Text="Room No."
@@ -57,9 +58,9 @@
                 Grid.Row="0"/>
             <TextBox
                 Grid.Row="1"
-                Grid.Column="0"
-                Text=""
-                Margin="0 5 0 0"/>
+                Grid.Column="1"
+                Text="{Binding RoomNumber}"
+                Margin="10 5 0 0"/>
         </Grid>
 
 
@@ -81,7 +82,7 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="10 5 0 0"
-                SelectedDate=""
+                SelectedDate="{Binding StartDate}"
                 />
             
             <TextBlock 
@@ -93,13 +94,16 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="10 5 0 0"
-                SelectedDate=""
+                SelectedDate="{Binding EndDate}"
                 />
         </Grid>
 
-        <StackPanel Grid.Row="4" Orientation="Horizontal"   Margin="0 25 0 0">
-            <Button Content="Submit"/>
-            <Button Content="Cancel" Margin="5 0 0 0"/>
+        <StackPanel
+            Grid.Row="4"
+            Orientation="Horizontal"
+            Margin="0 25 0 0">
+            <Button Command="{Binding SubmitCommand}" Content="Submit"/>
+            <Button Command="{Binding CancelCommand}" Content="Cancel" Margin="5 0 0 0"/>
         </StackPanel>
     </Grid>
 </UserControl>
