@@ -16,16 +16,16 @@ namespace Reservroom.Models
 			_reservations = new List<Reservation>();
 		}
 
-		public IEnumerable<Reservation> GetReservationsForUser(string username)
+		public IEnumerable<Reservation> GetAllReservations()
 		{
-			return _reservations.Where(r => r.Username == username).ToList();
+			return _reservations;
 		}
 
 		public void AddReservation(Reservation reservation) 
 		{
 			foreach (Reservation existingReservation in _reservations)
 			{
-				if(existingReservation.Conflicts(reservation)
+				if(existingReservation.Conflicts(reservation))
 				{
 					throw new ReservationConflictException(existingReservation, reservation);
 				}

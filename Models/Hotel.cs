@@ -13,9 +13,22 @@ namespace Reservroom.Models
 
 		public string Name { get; }
 
-		public Hotel()
+		public Hotel(string name)
 		{
 			_reservationBook = new ReservationBook();
+			Name = name;
+		}
+
+
+
+		public IEnumerable<Reservation> GetAllReservations()
+		{
+			return _reservationBook.GetAllReservations();
+		}
+
+		public void MakeReservation (Reservation reservation)
+		{
+			_reservationBook.AddReservation(reservation);
 		}
 	}
 }
